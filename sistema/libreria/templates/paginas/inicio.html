@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block titulo%} Inicio {% endblock %}
+
+{% block contenido %} 
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container">
+        <h1 class="display-5 fw-bold">LIBROS</h1>
+        <div class="card-group">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Compras</h5>
+                <p class="card-text">------</p>
+              </div>
+              <div class="card-footer">
+                <a
+                style="background-color: #FF0000; color: white; border: 1px solid #FF0000;"
+                class="btn btn-primary"
+                href="compras"
+                role="button"
+                >Ingresar</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Venta</h5>
+                <p class="card-text">------</p>
+              </div>
+              <div class="card-footer">
+                <a
+                style="background-color: #00BFFF; color: white; border: 1px solid #00BFFF;"
+                class="btn btn-primary"
+                href="ventas"
+                role="button"
+                >Ingresar</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Diario</h5>
+                <p class="card-text">------</p>                
+              </div>
+              <div class="card-footer">
+                <a
+                style="background-color: #800080; color: white; border: 1px solid #800080;"
+                class="btn btn-primary"
+                href="diario"
+                role="button"
+                >Ingresar</a>
+              </div>
+            </div>
+          </div>
+        <hr class="my-2">
+
+        <p class="lead">
+            <a 
+            role="button" 
+            class="btn btn-outline-secondary" 
+            href="#">Salir</a>
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
+

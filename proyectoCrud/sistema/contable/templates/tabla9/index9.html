@@ -1,0 +1,81 @@
+{% extends  "base.html" %}
+
+{% block titulo %} Tabla 9 {% endblock %}
+
+{% block navbar %}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tablas</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{% url 'tabla10' %}">Tabla 10</a></li>
+        <li><a class="dropdown-item" href="{% url 'tabla9' %}">Tabla 9</a></li>
+        <li><a class="dropdown-item" href="#">Tabla 4</a></li>
+        <li><a class="dropdown-item" href="#">Tabla 2</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Plan Contable</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block contenido %}  
+
+&nbsp;
+<figure class="text-left">
+    <blockquote class="blockquote">
+      <p>TABLA 9</p>
+    </blockquote>
+  </figure>
+
+<div class="card text-center">
+    <div class="card-header">
+        <a type="button" class="btn btn-outline-secondary" href="{% url 'crear9' %}">Agregar nuevo código</a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              {% for codigo in tabla9 %}
+              <tr>
+                <th scope="row">{{ codigo.N9 }}</th>
+                <td>{{ codigo.Descripcion9 }}</td>
+                <td>
+                    <a 
+                    type="button" 
+                    class="btn btn-outline-info" 
+                    href="#">
+                    Editar</a>
+                    | 
+                    <a 
+                    type="button" 
+                    class="btn btn-outline-danger" 
+                    href="#">
+                    Borrar</a>
+                </td>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+    <div class="card-footer text-body-secondary">
+    </div>
+  </div>
+
+{% endblock %}

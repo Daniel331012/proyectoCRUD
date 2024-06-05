@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block titulo%} Libro 10 {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a
+            name=""
+            id=""
+            class="btn btn-success"
+            href="{% url 'crear'%}"
+            role="button"
+            >Agregar nuevo código</a
+        >
+        
+    </div>
+
+    <div class="card-body">
+        <h4 class="card-title">Libro 10: TIPO DE COMPROBANTE DE PAGO O DOCUMENTO</h4>
+        
+        <div
+            class="table-responsive"
+        >
+            <table
+                class="table table-primary"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">DESCRIPCIÓN</th>
+                        <th scope="col">ACCIÓN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for libros in libros %}
+                    <tr class="">
+                        <td scope="row">{{libros.num}}</td>
+                        <td>{{libros.Desc}}</td>
+                        <td> <a
+                            name=""
+                            id="liveToastBtn"
+                            class="btn btn-info"
+                            href="{% url 'editar' libros.id %}"
+                            role="button"
+                            >Editar</a>
+                         | <a
+                         name=""
+                         id=""
+                         class="btn btn-danger"
+                         href="{% url 'eliminar' libros.id %}"
+                         role="button"
+                         >Borrar</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+</div>
+
+
+{% endblock %}
